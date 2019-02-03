@@ -24,7 +24,7 @@ public class FileOperator {
      *  ids to int and the two dates to string types.
      *  And last, but not least, it stores the elements of every line in a new object of type
      *  (check employees -> class Employee) and stores it to the list 'employeeList'. */
-    public static List<Employee> readFile() {
+    static List<Employee> readFile() {
 
         List<Employee> employeeList = new ArrayList<>();
 
@@ -51,7 +51,6 @@ public class FileOperator {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return employeeList;
     }
 }

@@ -6,7 +6,7 @@ public class CommonHours {
     private int emp2Id;
     private long commonDays;
 
-    public CommonHours(int emp1Id, int emp2Id, long commonDays){
+    public CommonHours(int emp1Id, int emp2Id, long commonDays) {
         this.emp1Id = emp1Id;
         this.emp2Id = emp2Id;
         this.commonDays = commonDays;
