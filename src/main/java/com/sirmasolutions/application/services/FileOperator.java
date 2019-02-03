@@ -17,11 +17,18 @@ public class FileOperator {
     private static final String DATE_FORMAT = "yyyy-MM-dd";
     private static final String LINE_SPLITTER = ",";
 
+    /* The only job for this class is to read the file with readFile() method.
+     *  This method iterates through every line of the employees.txt file, until it finds line with null value.
+     *  It trims the spaces between the information and checks for NULL values in dates, if there is NULL it replace it
+     *  with the current date. After those operations it parser the employees'
+     *  ids to int and the two dates to string types.
+     *  And last, but not least, it stores the elements of every line in a new object of type
+     *  (check employees -> class Employee) and stores it to the list 'employeeList'. */
     public static List<Employee> readFile() {
-        List<Employee> employeeList = new ArrayList<>();
-        //Reading the file content line by line
-        try {
 
+        List<Employee> employeeList = new ArrayList<>();
+
+        try {
             String[] employeeInfo;
             File file = new File(FILE_PATH);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
@@ -29,7 +36,7 @@ public class FileOperator {
 
             while (true) {
                 String line = bufferedReader.readLine();
-                if(line == null) break;
+                if (line == null) break;
 
                 employeeInfo = line.split(LINE_SPLITTER);
                 int employeeId = Integer.parseInt(employeeInfo[0].trim());
@@ -44,6 +51,7 @@ public class FileOperator {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return employeeList;
     }
 }
